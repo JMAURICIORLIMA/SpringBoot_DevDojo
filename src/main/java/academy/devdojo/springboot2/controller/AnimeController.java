@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("anime")
+@RequestMapping("animes")
 @Log4j2
 @RequiredArgsConstructor
 public class AnimeController {
@@ -22,8 +22,8 @@ public class AnimeController {
     private final DateUtil dateUtil;
 
     //localhost:8080/anime/list
-    @GetMapping(path = "list")
-    public List<Anime> List() {
+    @GetMapping
+    public List<Anime> list() {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
         return List.of(new Anime("DBZ"), new Anime("Berserk"));
     }
